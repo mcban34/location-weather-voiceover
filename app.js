@@ -13,7 +13,7 @@ function konumAl(){
         const api_key = 'e936334b81823fe1ec085d573de2961b';
         let city = konum.address.province;
         
-        const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}`;
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}`;
         fetch(url)
           .then(response => response.json())
           .then(durum => {
