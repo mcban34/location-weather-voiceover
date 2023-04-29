@@ -23,12 +23,13 @@ function konumAl(){
             let messageText = `Konumunuz : ${konum.address.province}<br>En Düşük Sıcaklık : ${(durum.main.temp_min - 273.1600).toFixed(2)} Derece, En Yüksek Sıcaklık : ${(durum.main.temp_max - 273.1600).toFixed(2)} Derece`
             messageTextElement.innerHTML+= messageText
             content.append(messageTextElement)
+
             //!seslendirme
             var metin = new SpeechSynthesisUtterance(messageText);
             var synth = window.speechSynthesis;
             synth.cancel();
             synth.speak(metin);
-
+           
         })
       })
     },function () {alert("Lütfen Konumunuzu Açın!")});
@@ -38,12 +39,7 @@ function konumAl(){
   }
 }
 
-document.addEventListener("DOMContentLoaded",function(){
-  konumAl();
-})
-
-
 document.querySelector(".konumBul").addEventListener("click",function(){
-  konumAl();
+    konumAl();
 })
 
