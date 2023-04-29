@@ -19,7 +19,7 @@ function konumAl(){
           .then(durum => {
             const content = document.querySelector(".content")
             let messageTextElement = document.createElement("h3")
-            let messageText = `Konumunuz : ${konum.address.province}. <br> En Düşük Sıcaklık : ${(durum.main.temp_min - 273.1600).toFixed(0)} Derece, En Yüksek Sıcaklık : ${(durum.main.temp_max - 273.1600).toFixed(0)} Derece`
+            let messageText = `Konumunuz : ${konum.address.province}. En Düşük Sıcaklık : ${(durum.main.temp_min - 273.1600).toFixed(0)} Derece, En Yüksek Sıcaklık : ${(durum.main.temp_max - 273.1600).toFixed(0)} Derece`
             messageTextElement.innerHTML+= messageText
             content.append(messageTextElement)
 
