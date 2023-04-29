@@ -9,8 +9,7 @@ function konumAl(){
       .then(res => res.json())
       .then(konum =>{
         console.log(konum.address.province)
-        
-        //7c9c09a25fb6eb204bc8da6111e5928f
+
         const api_key = 'e936334b81823fe1ec085d573de2961b';
         let city = konum.address.province;
         
@@ -20,7 +19,7 @@ function konumAl(){
           .then(durum => {
             const content = document.querySelector(".content")
             let messageTextElement = document.createElement("h3")
-            let messageText = `Konumunuz : ${konum.address.province}<br>En Düşük Sıcaklık : ${(durum.main.temp_min - 273.1600).toFixed(2)} Derece, En Yüksek Sıcaklık : ${(durum.main.temp_max - 273.1600).toFixed(2)} Derece`
+            let messageText = `Konumunuz : ${konum.address.province}. <br> En Düşük Sıcaklık : ${(durum.main.temp_min - 273.1600).toFixed(0)} Derece, En Yüksek Sıcaklık : ${(durum.main.temp_max - 273.1600).toFixed(0)} Derece`
             messageTextElement.innerHTML+= messageText
             content.append(messageTextElement)
 
