@@ -9,11 +9,12 @@ function konumAl(){
       .then(res => res.json())
       .then(konum =>{
         console.log(konum.address.province)
-  
+        
+        //7c9c09a25fb6eb204bc8da6111e5928f
         const api_key = 'e936334b81823fe1ec085d573de2961b';
         let city = konum.address.province;
         
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}`;
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=%C4%B0stanbul&appid=e936334b81823fe1ec085d573de2961b`;
         fetch(url)
           .then(response => response.json())
           .then(durum => {
